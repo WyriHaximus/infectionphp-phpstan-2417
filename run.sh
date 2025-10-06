@@ -1,0 +1,2 @@
+docker run --rm -it -v "`pwd`:`pwd`" -w "`pwd`" "ghcr.io/wyrihaximusnet/php:8.4-nts-alpine-slim-dev" composer install
+docker run --rm -it -v "`pwd`:`pwd`" -w "`pwd`" "ghcr.io/wyrihaximusnet/php:8.4-nts-alpine-slim-dev" vendor/bin/infection --ansi --log-verbosity=all --ignore-msi-with-no-mutations --configuration=./etc/qa/infection.json5 --static-analysis-tool=phpstan --static-analysis-tool-options="--level max --memory-limit=-1" --threads=$(nproc)
